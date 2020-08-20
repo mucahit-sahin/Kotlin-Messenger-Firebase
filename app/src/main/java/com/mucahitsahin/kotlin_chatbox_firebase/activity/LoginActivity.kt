@@ -1,4 +1,4 @@
-package com.mucahitsahin.kotlin_chatbox_firebase
+package com.mucahitsahin.kotlin_chatbox_firebase.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.mucahitsahin.kotlin_chatbox_firebase.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -39,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
             if(task.isSuccessful){
                 val guncelKullanici=auth.currentUser?.email.toString()
                 Toast.makeText(this,"Guncel Kullanici ${guncelKullanici}",Toast.LENGTH_LONG).show()
-                val intent=Intent(this,MainActivity::class.java)
+                val intent=Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -58,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
             if(it.isSuccessful){
                 val guncelKullanici=auth.currentUser?.email.toString()
                 Toast.makeText(this,"Guncel Kullanici ${guncelKullanici}",Toast.LENGTH_LONG).show()
-                val intent=Intent(this,MainActivity::class.java)
+                val intent=Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }

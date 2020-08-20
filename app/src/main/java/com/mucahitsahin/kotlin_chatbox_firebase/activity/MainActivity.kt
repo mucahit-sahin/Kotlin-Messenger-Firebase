@@ -1,9 +1,11 @@
-package com.mucahitsahin.kotlin_chatbox_firebase
+package com.mucahitsahin.kotlin_chatbox_firebase.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.mucahitsahin.kotlin_chatbox_firebase.R
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.HomeFragment
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.ProfileFragment
 
@@ -25,11 +27,11 @@ class MainActivity : AppCompatActivity() {
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .commit()
 
-        bottomNavigation.setOnNavigationItemReselectedListener {
+        bottomNavigation.setOnNavigationItemSelectedListener{
 
             when(it.itemId){
 
-                R.id.home_navigation->{
+                R.id.home_navigation ->{
                     homeFragment= HomeFragment()
                     supportFragmentManager
                         .beginTransaction()
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
                 }
-                R.id.profile_navigation->{
+                R.id.profile_navigation ->{
                     profileFragment= ProfileFragment()
                     supportFragmentManager
                         .beginTransaction()
@@ -51,6 +53,11 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_menu,menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
 
