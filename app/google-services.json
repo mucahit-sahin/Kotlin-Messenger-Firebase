@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "419979095984",
+    "firebase_url": "https://kotlin-chatbox-firebase.firebaseio.com",
+    "project_id": "kotlin-chatbox-firebase",
+    "storage_bucket": "kotlin-chatbox-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419979095984:android:a1832e97f79796bd46f075",
+        "android_client_info": {
+          "package_name": "com.mucahitsahin.kotlin_chatbox_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419979095984-tbtd8sclk1h0pk1m1ic95lcv3o1fcha4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBndgCb60gQbL-9ljMKsQMKXgSidnEh_yM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419979095984-tbtd8sclk1h0pk1m1ic95lcv3o1fcha4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
