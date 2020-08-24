@@ -27,13 +27,19 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        registerTextview.setOnClickListener {
+            val intent=Intent(this,RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
     }
 
     fun girisYap(view:View){
 
-        val email=emailEditText.text.toString()
-        val sifre=passwordEditText.text.toString()
+        val email=emailRegisterEditText.text.toString()
+        val sifre=passwordRegisterEditText.text.toString()
 
         auth.signInWithEmailAndPassword(email,sifre).addOnCompleteListener {task->
 
@@ -50,23 +56,5 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun kayitOl(view:View){
 
-        val email=emailEditText.text.toString()
-        val sifre=passwordEditText.text.toString()
-        auth.createUserWithEmailAndPassword(email,sifre).addOnCompleteListener {
-
-            if(it.isSuccessful){
-                val guncelKullanici=auth.currentUser?.email.toString()
-                Toast.makeText(this,"Guncel Kullanici ${guncelKullanici}",Toast.LENGTH_LONG).show()
-                val intent=Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-
-        }.addOnFailureListener {
-            Toast.makeText(this,it.localizedMessage.toString(),Toast.LENGTH_LONG).show()
-        }
-
-    }
 }

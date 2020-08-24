@@ -7,13 +7,14 @@
     android:background="@android:color/holo_green_light"
     tools:context=".activity.LoginActivity">
 
+
     <EditText
         android:id="@+id/emailRegisterEditText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="19dp"
         android:background="@drawable/rounded_edittext_login"
         android:ems="10"
         android:hint="Email Giriniz"
@@ -24,15 +25,33 @@
         app:layout_constraintBottom_toTopOf="@+id/passwordRegisterEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/kullaniciAdiEditText" />
+
+    <EditText
+        android:id="@+id/kullaniciAdiEditText"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/rounded_edittext_login"
+        android:ems="10"
+        android:hint="Kullanici Adi Giriniz"
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/emailRegisterEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectPhotoImageview" />
 
     <EditText
         android:id="@+id/passwordRegisterEditText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:layout_marginStart="54dp"
         android:layout_marginEnd="54dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="38dp"
         android:background="@drawable/rounded_edittext_login"
         android:ems="10"
         android:hint="Şifre Giriniz"
@@ -45,44 +64,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegisterEditText" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="46dp"
-        android:text="CHATBOX"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/emailRegisterEditText"
-        app:layout_constraintStart_toStartOf="@+id/emailRegisterEditText"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/rounded_edittext_login"
-        android:onClick="girisYap"
-        android:text="Giriş Yap"
-        app:layout_constraintBottom_toTopOf="@+id/registerTextview"
+        android:text="Üye Ol"
+        app:layout_constraintBottom_toTopOf="@+id/loginTextview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterEditText" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/registerTextview"
+        android:id="@+id/loginTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
-        android:text="Hesabın yoksa bir hesap oluştur."
+        android:layout_marginBottom="91dp"
+        android:text="Hesabın varsa hemen giriş yap."
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/selectPhotoImageview" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectPhotoImageview"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="309dp"
+        android:background="@drawable/rounded_imageview"
+        app:layout_constraintBottom_toTopOf="@+id/loginTextview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rounded_imageview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

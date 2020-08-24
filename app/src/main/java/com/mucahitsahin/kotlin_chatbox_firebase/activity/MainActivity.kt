@@ -1,10 +1,13 @@
 package com.mucahitsahin.kotlin_chatbox_firebase.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.mucahitsahin.kotlin_chatbox_firebase.R
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.HomeFragment
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.ProfileFragment
@@ -53,6 +56,23 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.yeni_mesaj_menu->{
+                val intent=Intent(this,NewMessageActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.cikis_yap_menu->{
+                FirebaseAuth.getInstance().signOut()
+                val intent=Intent(this,LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
