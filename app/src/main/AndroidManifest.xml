@@ -3,9 +3,8 @@
     package="com.mucahitsahin.kotlin_chatbox_firebase">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,10 +15,18 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activity.RegisterActivity"
-            android:label="@string/title_activity_register">
+            android:name=".activity.ChatActivity"
+            android:label="@string/title_activity_chat">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
         </activity>
+
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="@string/title_activity_register"></activity>
         <activity android:name=".activity.NewMessageActivity">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
@@ -27,7 +34,6 @@
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

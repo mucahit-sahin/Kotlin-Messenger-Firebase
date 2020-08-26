@@ -6,13 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mucahitsahin.kotlin_chatbox_firebase.R
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 
 
 class HomeFragment : Fragment() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -8,18 +8,44 @@ import android.view.MenuItem
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.mucahitsahin.kotlin_chatbox_firebase.R
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.HomeFragment
 import com.mucahitsahin.kotlin_chatbox_firebase.fragment.ProfileFragment
+import com.mucahitsahin.kotlin_chatbox_firebase.model.User
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var homeFragment: HomeFragment
     lateinit var profileFragment: ProfileFragment
 
+    companion object{
+        var currentUser: User?=null
+    }
+
+    private fun getCurrentUser(){
+        val uid=FirebaseAuth.getInstance().uid
+        val ref= FirebaseDatabase.getInstance().getReference("/users/$uid")
+        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                currentUser=snapshot.getValue(User::class.java)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        getCurrentUser()
 
         val bottomNavigation:BottomNavigationView=findViewById(R.id.bottomNavigationView)
 
